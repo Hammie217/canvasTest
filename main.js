@@ -31,26 +31,6 @@ function(item, object) {
 });
 }
 
-canvas.add(new fabric.Rect({ 
-  left: 100, 
-  top: 100, 
-  width: 50, 
-  height: 50, 
-  fill: '#faa', 
-  originX: 'left', 
-  originY: 'top',
-  centeredRotation: true
-}));
-
-canvas.add(new fabric.Circle({ 
-  left: 300, 
-  top: 300, 
-  radius: 50, 
-  fill: '#9f9', 
-  originX: 'left', 
-  originY: 'top',
-  centeredRotation: true
-}));
 
 // snap to grid
 
