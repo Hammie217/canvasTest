@@ -1,4 +1,4 @@
-var canvas = new fabric.Canvas('c', { selection: false });
+var canvas = new fabric.Canvas('canvas', { selection: false });
 var grid = 25;
 
 // create grid
@@ -31,6 +31,18 @@ function(item, object) {
 });
 }
 
+
+
+// snap to grid
+
+canvas.on('object:moving', function(options) { 
+  options.target.set({
+    left: Math.round(options.target.left / grid) * grid,
+    top: Math.round(options.target.top / grid) * grid
+  });
+});
+
+
 if (Modernizr.draganddrop) {
     // Browser supports HTML5 DnD.
 
@@ -50,12 +62,3 @@ if (Modernizr.draganddrop) {
     // Replace with a fallback to a library solution.
     alert("This browser doesn't support the HTML5 Drag and Drop API.");
 }
-
-// snap to grid
-
-canvas.on('object:moving', function(options) { 
-  options.target.set({
-    left: Math.round(options.target.left / grid) * grid,
-    top: Math.round(options.target.top / grid) * grid
-  });
-});
