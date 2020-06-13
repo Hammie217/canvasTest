@@ -43,7 +43,6 @@ canvas.on('object:moving', function(options) {
 });
 
 
-if (Modernizr.draganddrop) {
     // Browser supports HTML5 DnD.
 
     // Bind the event listeners for the image elements
@@ -58,7 +57,3 @@ if (Modernizr.draganddrop) {
     canvasContainer.addEventListener('dragover', handleDragOver, false);
     canvasContainer.addEventListener('dragleave', handleDragLeave, false);
     canvasContainer.addEventListener('drop', handleDrop, false);
-} else {
-    // Replace with a fallback to a library solution.
-    alert("This browser doesn't support the HTML5 Drag and Drop API.");
-}
