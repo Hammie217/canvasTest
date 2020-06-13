@@ -96,16 +96,14 @@ canvas.on('object:moving', function(options) {
        var img = document.querySelector('#images img.img_dragging');
    
        console.log('event: ', e);
-       var setImageWidth = 75, setImageHeight = 25;
        var newImage = new fabric.Image(img, {
            width: img.naturalWidth,
            height: img.naturalHeight,
-           scaleX: setImageWidth/img.naturalWidth,        
-           scaleY: setImageHeight/img.naturalHeight,
+           snapAngle: 90,
            // Set the center of the new object based on the event coordinates relative
            // to the canvas container.
-           left: Math.round(options.target.left / grid) * grid,
-           top: Math.round(options.target.top / grid) * grid
+           left: e.layerX,
+           top: e.layerY
        });
        canvas.add(newImage);
    
