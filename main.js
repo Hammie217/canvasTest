@@ -96,7 +96,7 @@ canvas.on('object:moving', function(options) {
        var img = document.querySelector('#images img.img_dragging');
    
        console.log('event: ', e);
-       var setImageWidth = 100, setImageHeight = 100;
+       var setImageWidth = 75, setImageHeight = 25;
        var newImage = new fabric.Image(img, {
            width: img.naturalWidth,
            height: img.naturalHeight,
