@@ -1,7 +1,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision;  image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" width="75px" height="25px" viewBox="0 0 75 25" font-size="11pt" text-anchor="middle" stroke="black" stroke-miterlimit="10" stroke-width="1.066667" fill="none">
         <g>
-        <line x1="6.186667" y1="8.533333" x2="30.186667" y2="8.533333"/>
+        <line x1="5.186667" y1="8.533333" x2="30.186667" y2="8.533333"/>
         <polyline points="54.186667,8.533333 54.186667,3.733333 30.186667,3.733333 30.186667,13.333333 54.186667,13.333333 54.186667,8.533333"/>
-        <line x1="54.186667" y1="8.533333" x2="78.186667" y2="8.533333"/>
+        <line x1="54.186667" y1="8.533333" x2="79.186667" y2="8.533333"/>
         </g></svg>
