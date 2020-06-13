@@ -11,9 +11,10 @@ for (var i = 0; i < (600 / grid); i++) {
 // add objects
 var resistors = [];
 function addResistor(){
+var tempGroup = [];
 fabric.loadSVGFromURL("./r.svg",function(objects,options)
 {
-  var loadedObjects = new fabric.Group(resistors);
+  var loadedObjects = new fabric.Group(tempGroup);
   loadedObjects.set({
     left: 0,
     top: 0,
