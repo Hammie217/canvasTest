@@ -57,3 +57,65 @@ canvas.on('object:moving', function(options) {
     canvasContainer.addEventListener('dragover', handleDragOver, false);
     canvasContainer.addEventListener('dragleave', handleDragLeave, false);
     canvasContainer.addEventListener('drop', handleDrop, false);
+
+    function handleDragStart(e) {
+        e.dataTransfer.setData('text/plain', '');
+       [].forEach.call(images, function (img) {
+           img.classList.remove('img_dragging');
+       });
+       this.classList.add('img_dragging');
+   }
+   
+   function handleDragOver(e) {
+       if (e.preventDefault) {
+           e.preventDefault(); // Necessary. Allows us to drop.
+       }
+   
+       e.dataTransfer.dropEffect = 'copy'; // See the section on the DataTransfer object.
+       // NOTE: comment above refers to the article (see top) -natchiketa
+   
+       return false;
+   }
+   
+   function handleDragEnter(e) {
+       // this / e.target is the current hover target.
+       this.classList.add('over');
+   }
+   
+   function handleDragLeave(e) {
+       this.classList.remove('over'); // this / e.target is previous target element.
+   }
+   
+   function handleDrop(e) {
+       // this / e.target is current target element.
+           e.preventDefault();
+       if (e.stopPropagation) {
+           e.stopPropagation(); // stops the browser from redirecting.
+       }
+   
+       var img = document.querySelector('#images img.img_dragging');
+   
+       console.log('event: ', e);
+       var setImageWidth = 100, setImageHeight = 100;
+       var newImage = new fabric.Image(img, {
+           width: img.naturalWidth,
+           height: img.naturalHeight,
+           scaleX: setImageWidth/img.naturalWidth,        
+           scaleY: setImageHeight/img.naturalHeight,
+           // Set the center of the new object based on the event coordinates relative
+           // to the canvas container.
+           left: e.layerX,
+           top: e.layerY
+       });
+       canvas.add(newImage);
+   
+       return false;
+   }
+   
+   function handleDragEnd(e) {
+       // this/e.target is the source node.
+       [].forEach.call(images, function (img) {
+           img.classList.remove('img_dragging');
+       });
+   }
+   
