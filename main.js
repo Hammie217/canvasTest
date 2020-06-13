@@ -104,8 +104,8 @@ canvas.on('object:moving', function(options) {
            scaleY: setImageHeight/img.naturalHeight,
            // Set the center of the new object based on the event coordinates relative
            // to the canvas container.
-           left: e.layerX,
-           top: e.layerY
+           left: Math.round(options.target.left / grid) * grid,
+           top: Math.round(options.target.top / grid) * grid
        });
        canvas.add(newImage);
    
