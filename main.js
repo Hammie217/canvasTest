@@ -104,8 +104,8 @@ canvas.on('object:moving', function(options) {
            snapAngle: 90,
            // Set the center of the new object based on the event coordinates relative
            // to the canvas container.
-           left:  0,
-           top: 0
+           left:  e.layerX,
+           top: e.layerY
        });
        canvas.add(newImage);
 
