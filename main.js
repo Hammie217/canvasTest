@@ -96,16 +96,22 @@ canvas.on('object:moving', function(options) {
        var img = document.querySelector('#images img.img_dragging');
    
        console.log('event: ', e);
+
+       
        var newImage = new fabric.Image(img, {
            width: img.naturalWidth,
            height: img.naturalHeight,
            snapAngle: 90,
            // Set the center of the new object based on the event coordinates relative
            // to the canvas container.
-           left: e.layerX,
-           top: e.layerY
+           left:  0,
+           top: 0
        });
        canvas.add(newImage);
+
+newImage.left = Math.round(newImage.left / grid) * grid
+newImage.top = Math.round(newImage.top / grid) * grid
+
    
        return false;
    }
