@@ -19,7 +19,8 @@ fabric.loadSVGFromURL("./r.svg",function(objects,options)
     left: 0,
     top: 0,
     width:75,
-    height:25
+    height:25,
+    snapAngle: 90
   });
   canvas.add(loadedObjects);
   canvas.renderAll();
