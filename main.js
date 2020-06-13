@@ -1,4 +1,4 @@
-var canvas = new fabric.Canvas('canvas', { selection: false });
+var canvas = new fabric.Canvas('c', { selection: false });
 var grid = 25;
 
 // create grid
