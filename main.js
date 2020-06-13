@@ -31,6 +31,25 @@ function(item, object) {
 });
 }
 
+if (Modernizr.draganddrop) {
+    // Browser supports HTML5 DnD.
+
+    // Bind the event listeners for the image elements
+    var images = document.querySelectorAll('#images img');
+    [].forEach.call(images, function (img) {
+        img.addEventListener('dragstart', handleDragStart, false);
+        img.addEventListener('dragend', handleDragEnd, false);
+    });
+    // Bind the event listeners for the canvas
+    var canvasContainer = document.getElementById('canvas-container');
+    canvasContainer.addEventListener('dragenter', handleDragEnter, false);
+    canvasContainer.addEventListener('dragover', handleDragOver, false);
+    canvasContainer.addEventListener('dragleave', handleDragLeave, false);
+    canvasContainer.addEventListener('drop', handleDrop, false);
+} else {
+    // Replace with a fallback to a library solution.
+    alert("This browser doesn't support the HTML5 Drag and Drop API.");
+}
 
 // snap to grid
 
