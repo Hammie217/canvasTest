@@ -9,10 +9,11 @@ for (var i = 0; i < (600 / grid); i++) {
 }
 
 // add objects
-var group = [];
+var resistors = [];
+function addResistor(){
 fabric.loadSVGFromURL("./r.svg",function(objects,options)
 {
-  var loadedObjects = new fabric.Group(group);
+  var loadedObjects = new fabric.Group(resistors);
   loadedObjects.set({
     left: 0,
     top: 0,
@@ -24,9 +25,9 @@ fabric.loadSVGFromURL("./r.svg",function(objects,options)
 },
 function(item, object) {
   object.set('id', item.getAttribute('id'));
-  group.push(object);
+  resistors.push(object);
 });
-
+}
 
 canvas.add(new fabric.Rect({ 
   left: 100, 
