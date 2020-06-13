@@ -26,7 +26,7 @@ fabric.loadSVGFromURL("./r.svg",function(objects,options)
 },
 function(item, object) {
   object.set('id', item.getAttribute('id'));
-  resistors.push(object);
+  tempGroup.push(object);
 });
 }
 
